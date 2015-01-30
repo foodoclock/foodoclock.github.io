@@ -1,0 +1,29 @@
+var app = angular.module('focApp', ['ui.router']);
+
+app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
+
+  $locationProvider.html5Mode(true);
+
+  $urlRouterProvider.otherwise('/');
+
+  $stateProvider
+    .state('default', {
+      url: '/',
+      templateUrl: 'views/home.html',
+      controller: function() {},
+      controllerAs: 'homeCtrl'
+    }).state('recipe', {
+      url: "/recipe/:name",
+      templateUrl: 'views/recipe.html',
+      controller: function($scope, $state, $http) {
+
+        $http.get('/store/recipes/' + $state.params.name  +  '.json')
+          .success(function(data) {
+            $scope.recipe = data.recipe;
+          });
+
+      },
+      controllerAs: 'recipeCtrl'
+    });
+
+});

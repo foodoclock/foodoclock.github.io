@@ -1,0 +1,22 @@
+{
+  "name": "foodoclock.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "js/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/foodoclock/foodoclock.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/foodoclock/foodoclock.github.io/issues"
+  },
+  "homepage": "https://github.com/foodoclock/foodoclock.github.io",
+  "devDependencies": {
+    "gulp-webserver": "^0.9.0"
+  }
+}

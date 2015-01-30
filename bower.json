@@ -1,0 +1,17 @@
+{
+  "name": "foodoclock.github.io",
+  "version": "0.0.0",
+  "homepage": "https://github.com/foodoclock/foodoclock.github.io",
+  "authors": [
+    "Samuel Molinari <samuel@molinari.me>",
+    "Timothy Stott <stott.timothy@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
