@@ -2,7 +2,8 @@ var app = angular.module('focApp', ['ui.router']);
 
 app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 
-  $locationProvider.html5Mode(true);
+  // FIXME Not working on github pages
+  // $locationProvider.html5Mode(true);
 
   $urlRouterProvider.otherwise('/');
 
