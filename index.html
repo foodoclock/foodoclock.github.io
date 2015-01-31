@@ -3,11 +3,16 @@
   <head>
     <base href="/" />
     <title>Food o'clock</title>
+
+    <link href="/vendors/foundation/css/normalize.css" rel="stylesheet" type="text/css" />
+    <link href="/vendors/foundation/css/foundation.css" rel="stylesheet" type="text/css" />
+    <link href="/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="/css/recipe.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body ng-app="focApp">
 
-    <div ui-view></div>
+    <div id="container" ui-view></div>
 
     <script src="/vendors/angular/angular.min.js" type="text/javascript"></script>
     <script src="/vendors/angular-ui-router/release/angular-ui-router.min.js" type="text/javascript"></script>

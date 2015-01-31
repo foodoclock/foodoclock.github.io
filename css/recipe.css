@@ -1,0 +1,199 @@
+/* Recipe heder */
+.recipe-header {
+  background-color: black;
+  background-size: cover;
+  text-align: center;
+  height: 65%;
+  position: relative;
+  display: table;
+  width: 100%;
+}
+
+.recipe-title {
+  display: table-cell;
+  height: 100%;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.recipe-name {
+  color: white;
+  background-color: rgba(0,0,0,0.8);
+  display: inline-block;
+  padding: 5px 20px;
+  font-size: 3rem;
+}
+
+.recipe-description {
+  text-align: center;
+  color: white;
+  background-color: rgba(0,0,0,0.8);
+  display: inline-block;
+  padding: 5px 20px;
+  font-weight: 200;
+  font-size: 18px;
+}
+
+.recipe-subheader {
+  text-align: center;
+  /* padding: 0; */
+  font-size: 2rem;
+  padding: 70px 0;
+  background-color: rgb(163, 163, 98);
+  margin-bottom: 70px;
+}
+
+.recipe-subheader h2 {
+  color: rgb(255, 255, 250);
+  font-size: 2.5rem;
+}
+
+.recipe-subheader .foc-icon {
+  border-radius: 50%;
+  background-color: rgb(233, 152, 68);
+  width: 100px;
+  height: 100px;
+  padding: 20px;
+}
+
+.recipe-subheader .foc-icon svg {
+  fill: rgb(255, 255, 255);
+  width: 64px;
+  height: 64px;
+}
+
+/* Recipe Info */
+
+.recipe-info {
+  position: sticky;
+  background-color: rgb(187, 185, 94);
+  /* border-top: 1px solid rgb(208, 206, 100); */
+}
+
+.recipe-info-list {
+  padding: 0;
+  text-align: center;
+  margin: 0;
+}
+
+.recipe-info-list li {
+  padding: 10px 20px;
+  color: white;
+  margin: 0;
+  list-style: none;
+  display: inline-block;
+}
+
+.recipe-info-title {
+  display: inline-block;
+  vertical-align: middle;
+  font-weight: 200;
+  opacity: 0.75;
+}
+
+.recipe-info-value {
+  font-size: 2rem;
+  font-weight: 600;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 10px;
+}
+
+.recipe-section {
+  padding: 0 0 70px 0;
+}
+
+/* Recipe ingredients */
+.recipe-ingredients {
+  text-align: center;
+  background-color: rgb(110, 110, 97);
+}
+
+.recipe-ingredients-list {
+  text-align: left;
+  display: inline-block;
+}
+
+.recipe-ingredient {
+  padding: 10px 0px;
+  color: white;
+  list-style-type: circle;
+}
+
+.recipe-ingredient-quantity {
+  display: inline-block;
+  background-color: rgb(187, 185, 94);
+  padding: 1px 6px;
+  border-radius: 3px;
+  color: rgb(255, 255, 255);
+}
+
+.recipe-ingredient-name {
+  display: inline-block;
+  background-color: rgb(126, 126, 110);
+  padding: 1px 6px;
+  border-radius: 3px;
+  color: rgb(255, 255, 255);
+}
+
+.recipe-ingredient-notes-list {
+  padding: 10px 0;
+  font-style: italic;
+  margin: 0;
+}
+
+.recipe-ingredient-note {
+  list-style: none;
+  opacity: 0.75;
+}
+
+.recipe-ingredient-note:before {
+  content: '“';
+}
+
+.recipe-ingredient-note:after {
+  content: '”';
+}
+
+/* Recipe cookware */
+.recipe-cookware {
+  background-color: rgb(236, 230, 212);
+  text-align: center;
+  border-bottom: 2px dashed #FDFDFD;
+}
+
+.recipe-cookware .recipe-subheader {
+  background-color: transparent;
+  margin: 0;
+}
+
+.recipe-cookware .recipe-subheader h2 {
+  color: rgb(110, 110, 97);
+}
+
+.recipe-cookware-list {
+  display: inline-block;
+  text-align: left;
+}
+
+.recipe-cookware-list li {
+  list-style: circle;
+}
+
+/* Recipe steps */
+.recipe-steps .recipe-subheader {
+  background-color: transparent;
+  margin-bottom: 0;
+}
+
+.recipe-steps .recipe-subheader .foc-icon {
+  background-color: rgb(119, 99, 67);
+}
+
+.recipe-steps .recipe-subheader h2 {
+  color: rgb(119, 99, 67);
+}
+
+.recipe-steps-list li {
+  padding: 20px 0;
+}

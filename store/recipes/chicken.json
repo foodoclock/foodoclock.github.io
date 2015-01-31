@@ -1,6 +1,22 @@
 {
   "recipe": {
-    "name": "Chicken",
-    "description": "Blah blah..."
+    "name": "Roast Chicken & Potatoes",
+    "description": "Roast chicken with sausage stuffin served with roast potatoes with olive oil, garlic  and rosemary",
+    "servings": 10,
+    "prepTime": 45,
+    "cookTime": 120,
+    "cover": "http://www.insockmonkeyslippers.com/wp-content/uploads/2012/10/roasted-sage-garlic-chicken-cv1.jpg",
+    "ingredients": [
+      { "name": "Chicken", "amount": 1, "unit": "kg", "notes": ["Cut in half"] },
+      { "name": "Potatoes", "amount": 500, "unit": "g", "notes": ["Washed", "Cut in equal chuncks"] },
+      { "name": "Garlic Gloves", "amount": 5, "notes": ["Finely sliced"] }
+    ],
+    "cookware": [
+      { "name": "Dish" }
+    ],
+    "steps": [
+      { "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pretium tellus a enim condimentum pharetra. Quisque at aliquam quam. Phasellus ut justo ligula. Suspendisse tortor sapien, molestie eget neque id, vehicula volutpat dui. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin in egestas sapien. Quisque at placerat erat. Sed quam tellus, condimentum et ex vel, cursus accumsan augue. Vivamus aliquet, lorem sit amet condimentum laoreet, metus velit iaculis nunc, vel tincidunt enim justo ut arcu." },
+      { "description": "Integer faucibus gravida diam. Fusce volutpat velit libero, eu pretium risus consectetur id. Etiam porta leo lacinia laoreet luctus. Mauris libero lacus, pharetra sit amet commodo id, venenatis sed nunc. Phasellus vel purus elementum, ultricies sapien scelerisque, varius sem. Ut finibus odio ut urna maximus pharetra nec nec magna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus." }
+    ]
   }
 }
