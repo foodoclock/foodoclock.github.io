@@ -18,8 +18,8 @@ gulp.task('recipe:new', function() {
 
   var nameToSlug = function nameToSlug(name) {
     return name.replace(/ +/ig, '-')
-               .replace(/\W/g, '')
-               .toLowerCase();
+               .toLowerCase()
+               .replace(/^[a-z0-9\-]/gi, '');
   };
 
   var generateNewJSON = function generateNewJSON(name, slug) {
