@@ -14,6 +14,29 @@ gulp.task('serve', function() {
     }));
 });
 
+var getCurrentBranchName = function getCurrentBranchName(callback) {
+  git.exec({args : 'rev-parse --abbrev-ref HEAD'}, function (err, stdout) {
+    callback(stdout);
+  });
+};
+
+var isBranch = function isBranch(name, callback) {
+  getCurrentBranchName(function branchNamecallback(branchName) {
+    callback(name === branchName);
+  });
+};
+
+var recipeRegex = function recipeRegex(str) {
+  var matches = str.match(/^recipe\/.+/);
+  return matches && matches.length > 0;
+};
+
+var isRecipeBranch = function isRecipeBranch(callback) {
+  getCurrentBranchName(function branchNamecallback(branchName) {
+    callback(recipeRegex(branchName));
+  });
+};
+
 gulp.task('recipe:new', function() {
 
   var nameToSlug = function nameToSlug(name) {
@@ -37,6 +60,16 @@ gulp.task('recipe:new', function() {
 
   };
 
+  var checkout = function checkout(name, slug) {
+    git.checkout('recipe/' + slug, { args: '-b' }, function (err) {
+      if(!!err) {
+        console.error(err);
+      } else {
+        generateNewJSON(name, slug);
+      }
+    });
+  };
+
   var createBranch = function createBranch(name) {
 
     var slug = nameToSlug(name);
@@ -45,11 +78,11 @@ gulp.task('recipe:new', function() {
       if(hasChanges) {
         console.error('ERROR: Make sure to commit or stash all your existing changes');
       } else {
-        git.checkout('recipe/' + slug, { args: '-b' }, function (err) {
-          if(!!err) {
-            console.error(err);
+        isBranch('master', function callback(isMasterBranch) {
+          if(isMasterBranch) {
+            checkout(name, slug);
           } else {
-            generateNewJSON(name, slug);
+            console.error('ERROR: You must run this task from the master branch');
           }
         });
       }
@@ -65,5 +98,26 @@ gulp.task('recipe:new', function() {
     }, function(res){
       createBranch(res.recipeName);
     }));
+
+});
+
+
+gulp.task('recipe:save', function() {
+
+  getCurrentBranchName(function callback(branchName) {
+    if(recipeRegex(branchName)) {
+      gulp.src('store/recipes/' + branchName.replace('/', '_'))
+        .pipe(git.add())
+        .pipe(git.commit('Saved using gulp task'));
+
+      git.push('origin', branchName, function (err) {
+        if(!!err) {
+          console.error(err);
+        } else {
+          console.log('Recipe has been saved');
+        }
+      });
+    }
+  });
 
 });
