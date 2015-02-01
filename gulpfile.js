@@ -101,21 +101,21 @@ gulp.task('recipe:new', function() {
 
 });
 
-
 gulp.task('recipe:save', function() {
 
   getCurrentBranchName(function callback(branchName) {
     if(recipeRegex(branchName)) {
-      gulp.src('store/recipes/' + branchName.replace('/', '_') + '.json')
-        .pipe(git.add())
-        .pipe(git.commit('Saved using gulp task'));
-
-      git.push('origin', branchName, function (err) {
-        if(!!err) {
-          console.error(err);
-        } else {
-          console.log('Recipe has been saved');
-        }
+      var file = 'store/recipes/' + branchName.replace('recipe/', '').replace('/', '_') + '.json';
+      git.exec({args: 'add ' + file}, function () {
+        git.exec({args: 'commit -m "Saved using gulp task `recipe:save`" ' + file}, function() {
+          git.push('origin', branchName, function (err) {
+            if(!!err) {
+              console.error(err);
+            } else {
+              console.log('Recipe has been saved');
+            }
+          });
+        });
       });
     }
   });
