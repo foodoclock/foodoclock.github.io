@@ -1,0 +1,16 @@
+{
+  "name": "<%= recipe.name %>",
+  "description": "",
+  "preparationTime": 0,
+  "cookingTime": 0,
+  "servings": 1,
+  "ingredients": [
+    { "name": "", "amount": 0, "unit": "", "steps": [""] }
+  ],
+  "cookware": [
+    { "name": "" }
+  ],
+  "steps": [
+    { "description": "", "duration": 0 }
+  ]
+}
