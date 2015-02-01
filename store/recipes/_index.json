@@ -1,0 +1,29 @@
+{
+  "_index": {
+    "chicken": {
+      "name": "Roast Chicken with Potatoes",
+      "thumbnail": "http://www.insockmonkeyslippers.com/wp-content/uploads/2012/10/roasted-sage-garlic-chicken-cv1.jpg",
+      "createdAt": 1422730985099
+    },
+    "rice": {
+      "name": "Roast Chicken with Potatoes",
+      "thumbnail": "http://www.insockmonkeyslippers.com/wp-content/uploads/2012/10/roasted-sage-garlic-chicken-cv1.jpg",
+      "createdAt": 1422730985099
+    },
+    "rice1": {
+      "name": "Roast Chicken with Potatoes",
+      "thumbnail": "http://www.insockmonkeyslippers.com/wp-content/uploads/2012/10/roasted-sage-garlic-chicken-cv1.jpg",
+      "createdAt": 1422730985099
+    },
+    "rice2": {
+      "name": "Roast Chicken with Potatoes",
+      "thumbnail": "http://www.insockmonkeyslippers.com/wp-content/uploads/2012/10/roasted-sage-garlic-chicken-cv1.jpg",
+      "createdAt": 1422730985099
+    },
+    "rice3": {
+      "name": "Roast Chicken with Potatoes",
+      "thumbnail": "http://www.insockmonkeyslippers.com/wp-content/uploads/2012/10/roasted-sage-garlic-chicken-cv1.jpg",
+      "createdAt": 1422730985099
+    }
+  }
+}

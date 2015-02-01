@@ -1,6 +1,6 @@
 html, body {
   height: 100%;
-  background-color: rgb(253, 253, 253);
+  background-color: rgb(250, 250, 245);
   color: rgb(116, 105, 87);
 }
 
@@ -19,4 +19,29 @@ article {
 
 .foc-icon {
   display: inline-block;
+}
+
+.home-header {
+  height: 50%;
+  display: table;
+  background: rgb(89,44,63);
+  width: 100%;
+  border-bottom: 2px dashed #fdfdfd;
+}
+
+.home-header-title {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.home-header-title-name {
+  font-family: 'Pacifico', cursive;
+  color: white;
+  display: inline-block;
+  text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.75);
+}
+
+h1.home-header-title-name {
+  font-size: 4rem;
 }

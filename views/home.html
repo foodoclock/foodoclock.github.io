@@ -1,1 +1,8 @@
-<h1>Hello World</h1>
+<ul class="home-recipes">
+  <li class="home-recipe" ng-repeat="(slug, recipe) in recipes">
+    <a ui-sref="recipe-show({name: slug})">
+      <div class="home-recipe-thumbnail" ng-style="{ 'background-image': 'url(' + recipe.thumbnail  + ')'  }"></div>
+      <h2 ng-bind="recipe.name"></h2>
+    </a>
+  </li>
+</ul>

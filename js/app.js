@@ -11,9 +11,18 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     .state('default', {
       url: '/',
       templateUrl: 'views/home.html',
-      controller: function() {},
+      controller: function($scope, $http) {
+
+        $http.get('/store/recipes/_index.json')
+          .success(function(data) {
+
+            $scope.recipes = data._index;;
+
+          });
+
+      },
       controllerAs: 'homeCtrl'
-    }).state('recipe', {
+    }).state('recipe-show', {
       url: "/recipe/:name",
       templateUrl: 'views/recipe.html',
       controller: function($scope, $state, $http) {
