@@ -29,10 +29,10 @@ gulp.task('recipe:new', function() {
       .pipe(gulp.dest('store/recipes'));
   };
 
-  var hasExistingChanges = function hasExistingChanges() {
+  var hasExistingChanges = function hasExistingChanges(callback) {
 
     git.status({args : '--porcelain'}, function (err, stdout) {
-      console.log(stdout);
+      callback(stdout && stdout.length > 0);
     });
 
   };
@@ -41,15 +41,19 @@ gulp.task('recipe:new', function() {
 
     var slug = nameToSlug(name);
 
-    hasExistingChanges();
-
-    //git.checkout('recipe/' + slug, { args: '-b' }, function (err) {
-    //  if(!!err) {
-    //    console.error(err);
-    //  } else {
-    //    generateNewJSON(name, slug);
-    //  }
-    //});
+    hasExistingChanges(function callback(hasChanges) {
+      if(hasChanges) {
+        console.error('ERROR: Make sure to commit or stash all your existing changes');
+      } else {
+        git.checkout('recipe/' + slug, { args: '-b' }, function (err) {
+          if(!!err) {
+            console.error(err);
+          } else {
+            generateNewJSON(name, slug);
+          }
+        });
+      }
+    });
 
   };
 
