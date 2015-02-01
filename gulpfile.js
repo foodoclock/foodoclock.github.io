@@ -16,7 +16,7 @@ gulp.task('serve', function() {
 
 var getCurrentBranchName = function getCurrentBranchName(callback) {
   git.exec({args : 'rev-parse --abbrev-ref HEAD'}, function (err, stdout) {
-    callback(stdout);
+    callback(stdout.trim());
   });
 };
 
@@ -106,7 +106,7 @@ gulp.task('recipe:save', function() {
 
   getCurrentBranchName(function callback(branchName) {
     if(recipeRegex(branchName)) {
-      gulp.src('store/recipes/' + branchName.replace('/', '_'))
+      gulp.src('store/recipes/' + branchName.replace('/', '_') + '.json')
         .pipe(git.add())
         .pipe(git.commit('Saved using gulp task'));
 
