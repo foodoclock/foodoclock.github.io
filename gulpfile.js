@@ -107,7 +107,7 @@ gulp.task('recipe:save', function() {
     if(recipeRegex(branchName)) {
       var file = 'store/recipes/' + branchName.replace('recipe/', '').replace('/', '_') + '.json';
       git.exec({args: 'add ' + file}, function () {
-        git.exec({args: 'commit -m "Saved using gulp task `recipe:save`" ' + file}, function() {
+        git.exec({args: 'commit -m "Saved using gulp task \'recipe:save\'" ' + file}, function() {
           git.push('origin', branchName, function (err) {
             if(!!err) {
               console.error(err);
