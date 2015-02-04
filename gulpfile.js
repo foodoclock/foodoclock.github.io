@@ -5,6 +5,8 @@ var prompt = require('gulp-prompt');
 var template = require('gulp-template');
 var rename = require('gulp-rename');
 
+const MAIN_BRANCH = 'dev';
+
 gulp.task('serve', function() {
   gulp.src('.')
     .pipe(webserver({
@@ -78,11 +80,11 @@ gulp.task('recipe:new', function() {
       if(hasChanges) {
         console.error('ERROR: Make sure to commit or stash all your existing changes');
       } else {
-        isBranch('master', function callback(isMasterBranch) {
+        isBranch(MAIN_BRANCH, function callback(isMasterBranch) {
           if(isMasterBranch) {
             checkout(name, slug);
           } else {
-            console.error('ERROR: You must run this task from the master branch');
+            console.error('ERROR: You must run this task from the ' + MAIN_BRANCH + ' branch');
           }
         });
       }
@@ -102,9 +104,8 @@ gulp.task('recipe:new', function() {
 });
 
 gulp.task('recipe:publish', ['recipe:save'], function() {
-  var targetBranch = 'dev';
   getCurrentBranchName(function callback(branchName) {
-    git.checkout(targetBranch, function (err) {
+    git.checkout(MAIN_BRANCH, function (err) {
       if(!!err) {
         console.log(err);
       } else {
@@ -112,13 +113,11 @@ gulp.task('recipe:publish', ['recipe:save'], function() {
           if(!!err) {
             console.log(err);
           } else {
-            git.push('origin', targetBranch, function(err){
+            git.push('origin', MAIN_BRANCH, function(err){
               if(!!err) {
                 console.log(err);
               } else {
-                git.checkout(branchName, function(err){
-                
-                });
+                git.checkout(branchName, function(err) {});
               }
             });
           }
