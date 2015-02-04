@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/foodoclock/foodoclock.github.io.svg)](https://travis-ci.org/foodoclock/foodoclock.github.io)
+
+===
+
 # Food o'clock
 
 ## Setup
