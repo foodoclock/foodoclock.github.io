@@ -101,6 +101,33 @@ gulp.task('recipe:new', function() {
 
 });
 
+gulp.task('recipe:publish', ['recipe:save'], function() {
+  var targetBranch = 'dev';
+  getCurrentBranchName(function callback(branchName) {
+    git.checkout(targetBranch, function (err) {
+      if(!!err) {
+        console.log(err);
+      } else {
+        git.merge(branchName, function (err) {
+          if(!!err) {
+            console.log(err);
+          } else {
+            git.push('origin', targetBranch, function(err){
+              if(!!err) {
+                console.log(err);
+              } else {
+                git.checkout(branchName, function(err){
+                
+                });
+              }
+            });
+          }
+        });
+      }
+    });
+  });
+});
+
 gulp.task('recipe:save', function() {
 
   getCurrentBranchName(function callback(branchName) {
