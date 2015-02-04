@@ -13,3 +13,29 @@ gulp serve
 ```
 
 Access the site at `localhost:8000`
+
+## Gulp Tasks
+
+### Create new recipe
+
+```
+gulp recipe:new
+```
+
+### Save recipe
+
+```
+gulp recipe:save
+```
+
+### Publish recipe
+
+```
+gulp recipe:publish
+```
+
+### Create recipe variant
+
+```
+gulp recipe:variant
+```
