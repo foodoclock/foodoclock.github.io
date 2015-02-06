@@ -10,10 +10,10 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
   $stateProvider
     .state('default', {
       url: '/',
-      templateUrl: 'views/home.html',
+      templateUrl: 'public/views/home.html',
       controller: function($scope, $http) {
 
-        $http.get('/store/recipes/_index.json')
+        $http.get('/public/store/recipes/_index.json')
           .success(function(data) {
 
             $scope.recipes = data._index;;
@@ -24,10 +24,10 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
       controllerAs: 'homeCtrl'
     }).state('recipe-show', {
       url: "/recipe/:name",
-      templateUrl: 'views/recipe.html',
+      templateUrl: 'public/views/recipe.html',
       controller: function($scope, $state, $http) {
 
-        $http.get('/store/recipes/' + $state.params.name  +  '.json')
+        $http.get('/public/store/recipes/' + $state.params.name  +  '.json')
           .success(function(data) {
             $scope.recipe = data.recipe;
           });

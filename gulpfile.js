@@ -48,7 +48,7 @@ gulp.task('recipe:new', function() {
   };
 
   var generateNewJSON = function generateNewJSON(name, slug) {
-    gulp.src('templates/_recipe.json')
+    gulp.src('private/templates/_recipe.json')
       .pipe(template({ recipe: { name: name } }))
       .pipe(rename(slug + '.json'))
       .pipe(gulp.dest('store/recipes'));
