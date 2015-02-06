@@ -147,3 +147,26 @@ gulp.task('recipe:save', function() {
   });
 
 });
+
+gulp.task('recipe:variant', function () {
+
+  getCurrentBranchName(function callback(branchName) {
+
+    if(recipeRegex(branchName)) {
+
+      gulp.src('')
+        .pipe(prompt.prompt({
+            type: 'input',
+            name: 'variantName',
+            message: 'What is the name of your variation of this recipe?'
+        }, function(res){
+
+        }));
+
+    } else {
+      console.error('recipe:variant must be ran from a recipe branch');
+    }
+
+  });
+
+});
