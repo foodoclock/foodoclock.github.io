@@ -3,4 +3,4 @@ node_js:
   - "0.10"
 
 after_success:
-  - node private/scripts/CI.js
+  - node ./private/scripts/publish.js
