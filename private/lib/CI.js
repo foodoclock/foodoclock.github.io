@@ -12,7 +12,7 @@ CI.mergePreReleaseToMaster = function mergePreReleaseToMaster() {
 
   var sshAdd   = 'touch ../rsa && echo \'' + process.env.GITHUB_PRIVATE_KEY + '\' > ../rsa && '
                + 'chmod 600 ../rsa && '
-               + 'ssh-agent -s && '
+               + 'eval `ssh-agent -s` && '
                + 'ssh-add ../rsa';
   var fetch    = 'git fetch origin ' + CI.MASTER_BRANCH + ':' + CI.MASTER_BRANCH;
   var checkout = 'git checkout ' + CI.MASTER_BRANCH;
