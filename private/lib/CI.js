@@ -10,13 +10,14 @@ CI.MASTER_BRANCH      = 'master';
  */
 CI.mergePreReleaseToMaster = function mergePreReleaseToMaster() {
 
+  var sshAdd   = 'touch ../rsa && echo \'' + process.env.GITHUB_PRIVATE_KEY + '\' > ../rsa && ssh-add ../rsa';
   var fetch    = 'git fetch origin ' + CI.MASTER_BRANCH + ':' + CI.MASTER_BRANCH;
   var checkout = 'git checkout ' + CI.MASTER_BRANCH;
   var pull     = 'git pull origin ' + CI.MASTER_BRANCH;
   var merge    = 'git merge ' + CI.PRE_RELEASE_BRANCH + ' --ff-only';
   var push     = 'git push origin ' + CI.MASTER_BRANCH;
 
-  CI.runCommands([fetch, checkout, pull, merge, push]);
+  CI.runCommands([sshAdd, fetch, checkout, pull, merge, push]);
 
 };
 
