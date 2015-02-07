@@ -8,7 +8,8 @@ const MASTER_BRANCH      = 'master';
  */
 var mergePreReleaseToMaster = function mergePreReleaseToMaster() {
 
-  var command = 'git checkout ' + MASTER_BRANCH + ' && '
+  var command = 'git fetch &&'
+              + 'git checkout ' + MASTER_BRANCH + ' && '
               + 'git merge ' + PRE_RELEASE_BRANCH + ' && '
               + 'git push origin ' + MASTER_BRANCH;
 
