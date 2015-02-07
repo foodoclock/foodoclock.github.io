@@ -11,7 +11,7 @@ CI.MASTER_BRANCH      = 'master';
 CI.mergePreReleaseToMaster = function mergePreReleaseToMaster() {
 
   var sshAdd   = 'touch ../rsa && '
-               + 'echo \'' + process.env.GITHUB_PRIVATE_KEY_BASE_64 + '\' | base64 --decode -o ../rsa && '
+               + 'echo \'' + process.env.GITHUB_PRIVATE_KEY_BASE_64 + '\' | base64 --decode > ../rsa && '
                + 'chmod 600 ../rsa && '
                + 'eval `ssh-agent -s` && '
                + 'ssh-add ../rsa';
