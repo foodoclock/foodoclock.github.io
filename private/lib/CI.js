@@ -10,21 +10,44 @@ CI.MASTER_BRANCH      = 'master';
  */
 CI.mergePreReleaseToMaster = function mergePreReleaseToMaster() {
 
-  var command = 'git checkout ' + CI.MASTER_BRANCH + ' && '
-              + 'git merge ' + CI.PRE_RELEASE_BRANCH + ' && '
-              + 'git push origin ' + CI.MASTER_BRANCH;
+  var fetch    = 'git fetch origin ' + MASTER_BRANCH + ':' + MASTER_BRANCH;
+  var checkout = 'git checkout ' + MASTER_BRANCH;
+  var pull     = 'git pull origin ' + MASTER_BRANCH;
+  var merge    = 'git merge ' + PRE_RELEASE_BRANCH + ' --ff-only';
+  var push     = 'git push origin ' + MASTER_BRANCH;
 
-  exec(command, { cwd: '.' }, function execCallback(error, stdout, stderr) {
+  CI.runCommands([fetch, checkout, pull, merge, push]);
+
+};
+
+/**
+ * Run commands
+ *
+ * @param {array} cmd Command to be executed
+ */
+CI.runCommands = function runCommand(cmds) {
+
+  var cmd = cmds[0];
+  var nextCommands = cmds.slice(1, cmds.length);
+
+  exec(cmd, { cwd: '.' }, function execCallback(error, stdout, stderr) {
 
     if(!!error) {
 
+      console.log(stdout);
       console.error(error);
+
       process.exit(1);
 
     } else {
 
       console.log(stdout);
-      process.exit(0);
+
+      if(nextCommands.length > 0) {
+        CI.runCommands(nextCommands);
+      } else {
+        process.exit(0);
+      }
 
     }
 
