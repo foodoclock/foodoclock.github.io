@@ -2,7 +2,7 @@ var CI = require('../lib/CI');
 
 console.log('Checking if this change need to be publish');
 
-// Only pulish is CI has the right environment to do so
+// Only pulish if CI has the right environment to do so
 if(CI.isReadyForPublication()) {
   console.log('Ready for publication');
   CI.mergePreReleaseToMaster();
