@@ -1,4 +1,4 @@
-<article>
+<article ng-if="!loading && !failed">
 
   <header class="recipe-header" ng-style="{ 'background-image': 'url(' + recipe.cover + ')' }">
 
@@ -199,3 +199,5 @@
   </section>
 
 </article>
+
+<foc-loader-clock ng-if="loading" message="Loading recipe"></foc-loader-clock>

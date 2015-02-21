@@ -16,24 +16,19 @@
 
   <body ng-app="focApp">
 
-    <div class="sticky">
-      <nav class="top-bar" data-topbar role="navigation">
-        <ul class="title-area">
-          <li class="name">
-            <h1><a ui-sref="default">Food O'Clock</a></h1>
-          </li>
-        </ul>
-      </nav>
-    </div>
-
+    <ng-include src="'/public/views/partials/_navbar.html'"></ng-include>
     <div id="container" ui-view></div>
 
     <script src="/public/vendors/angular/angular.js" type="text/javascript"></script>
     <script src="/public/vendors/angular-ui-router/release/angular-ui-router.min.js" type="text/javascript"></script>
     <script src="/public/js/app.js" type="text/javascript"></script>
+    <!-- Directives -->
     <script src="/public/js/directives/recipeCard/recipeCardDirective.js" type="text/javascript"></script>
     <script src="/public/js/directives/recipeCardList/recipeCardListDirective.js" type="text/javascript"></script>
     <script src="/public/js/directives/loader/clock/loaderClockDirective.js" type="text/javascript"></script>
+    <!-- Controllers -->
+    <script src="/public/js/controllers/cookbookController.js" type="text/javascript"></script>
+    <script src="/public/js/controllers/recipeController.js" type="text/javascript"></script>
   </body>
 
 </html>

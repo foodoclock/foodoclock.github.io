@@ -8,32 +8,14 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
   $urlRouterProvider.otherwise('/');
 
   $stateProvider
-    .state('default', {
+    .state('cookbook', {
       url: '/',
-      templateUrl: 'public/views/home.html',
-      controller: function($scope, $http) {
-
-        $http.get('/public/store/recipes/_index.json')
-          .success(function(data) {
-
-            $scope.recipes = data._index;;
-
-          });
-
-      },
-      controllerAs: 'homeCtrl'
+      templateUrl: '/public/views/cookbook.html',
+      controller: 'cookbookController'
     }).state('recipe-show', {
       url: "/recipe/:name",
-      templateUrl: 'public/views/recipe.html',
-      controller: function($scope, $state, $http) {
-
-        $http.get('/public/store/recipes/' + $state.params.name  +  '.json')
-          .success(function(data) {
-            $scope.recipe = data.recipe;
-          });
-
-      },
-      controllerAs: 'recipeCtrl'
+      templateUrl: '/public/views/recipe.html',
+      controller: 'recipeController'
     });
 
 });
