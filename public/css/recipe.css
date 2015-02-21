@@ -187,11 +187,11 @@
 }
 
 .recipe-steps .recipe-subheader .foc-icon {
-  background-color: rgb(119, 99, 67);
+  background-color: rgb(160, 65, 48);
 }
 
 .recipe-steps .recipe-subheader h2 {
-  color: rgb(119, 99, 67);
+  color: white;
 }
 
 .recipe-steps-list li {

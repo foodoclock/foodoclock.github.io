@@ -15,11 +15,15 @@
 
   <body ng-app="focApp">
 
-    <header class="home-header">
-      <div class="home-header-title">
-        <h1 class="home-header-title-name">Food O'Clock</h1>
-      </div>
-    </header>
+    <div class="sticky">
+      <nav class="top-bar" data-topbar role="navigation">
+        <ul class="title-area">
+          <li class="name">
+            <h1><a ui-sref="default">Food O'Clock</a></h1>
+          </li>
+        </ul>
+      </nav>
+    </div>
 
     <div id="container" ui-view></div>
 

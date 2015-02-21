@@ -1,15 +1,18 @@
 .home-recipes {
   padding: 20px;
   margin: 0;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .home-recipe {
   display: inline-block;
-  border: 1px solid rgba(236, 236, 225, 1);
+  padding: 10px;
+  margin: 10px;
   background-color: white;
   list-style: none;
-  margin: 5px 1.6%;
-  width: 30%;
+  flex-grow: 1;
+  box-shadow: 10px 10px rgba(184, 69, 48, 1);
 }
 
 .home-recipe a {
@@ -24,8 +27,9 @@
 
 .home-recipe h2 {
   width: 100%;
-  padding: 10px;
+  padding: 10px 10px 0 10px;
   font-size: 1em;
   font-weight: 600;
   text-align: center;
+  margin: 0;
 }
