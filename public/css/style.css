@@ -6,6 +6,7 @@ html, body {
 
 #container {
   height: 100%;
+  padding-top: 2.8125rem;
 }
 
 .container {
