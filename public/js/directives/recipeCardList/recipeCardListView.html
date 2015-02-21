@@ -1,0 +1,7 @@
+<div class="home-recipes">
+  <foc-recipe-card ng-repeat="(slug, recipe) in recipes"
+                   name="{{recipe.name}}"
+                   slug="{{slug}}"
+                   img-src="{{recipe.thumbnail}}">
+  </foc-recipe-card>
+</div>
