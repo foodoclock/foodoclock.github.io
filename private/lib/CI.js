@@ -1,5 +1,4 @@
 var exec = require('child_process').exec;
-var fs = require('fs');
 
 var CI = {};
 
@@ -11,18 +10,13 @@ CI.MASTER_BRANCH      = 'master';
  */
 CI.mergePreReleaseToMaster = function mergePreReleaseToMaster() {
 
-  var sshAdd   = 'touch ../rsa && '
-               + 'echo \'' + process.env.GITHUB_PRIVATE_KEY_BASE_64 + '\' | base64 --decode > ../rsa && '
-               + 'chmod 600 ../rsa && '
-               + 'eval `ssh-agent -s` && '
-               + 'ssh-add ../rsa';
   var fetch    = 'git fetch origin ' + CI.MASTER_BRANCH + ':' + CI.MASTER_BRANCH;
   var checkout = 'git checkout ' + CI.MASTER_BRANCH;
   var pull     = 'git pull origin ' + CI.MASTER_BRANCH;
   var merge    = 'git merge ' + CI.PRE_RELEASE_BRANCH + ' --ff-only';
   var push     = 'git push origin ' + CI.MASTER_BRANCH;
 
-  CI.runCommands([sshAdd, fetch, checkout, pull, merge, push]);
+  CI.runCommands([fetch, checkout, pull, merge, push]);
 
 };
 
@@ -48,12 +42,7 @@ CI.runCommands = function runCommand(cmds) {
     } else {
 
       console.log(stdout);
-      fs.readFile('../rsa', 'utf8', function (err,data) {
-        if (err) {
-          return console.log(err);
-        }
-        console.log(data);
-      });
+
       if(nextCommands.length > 0) {
         CI.runCommands(nextCommands);
       } else {

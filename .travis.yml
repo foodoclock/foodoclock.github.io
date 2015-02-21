@@ -1,6 +1,10 @@
 language: node_js
 node_js:
-  - "0.10"
-
+  - '0.10'
 after_success:
+  - git config credential.helper "store --file=.git/credentials"
+  - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
   - node ./private/scripts/publish.js
+env:
+  global:
+    secure: qWP80UNyBL0jG3nFZwkaO60C8uer/WRCeNgmXrTFAqyNLPKTPRjRCmnT01toL8/j8HRa3DvsclTxKqgr7/9iZvTSqBPsRoamtFmXSsp+o5lHHr4FLE36IDxNKPpsioSz7a7DhTkaW8JgYEdGcllyUKKL4US2uEDGxygdgCvvD4g=
