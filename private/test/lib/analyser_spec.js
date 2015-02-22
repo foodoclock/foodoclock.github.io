@@ -45,8 +45,9 @@ describe('Analyser', function () {
     describe('Analyser.recipesIndexing._getRecipesList', function () {
 
       describe('when the store contains recipes', function () {
-        it('returns an array of strings matching the recipes\' names', function () {
+        it('returns an array of strings matching the recipes\' names', function (done) {
           expect(Analyser.recipesIndexing._getRecipesList()).to.eql(DUMMY_RECIPES);
+          done();
         });
 
         it('returns an array of size that equals the number of recipes', function (done) {
