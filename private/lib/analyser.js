@@ -11,7 +11,8 @@ var Analyser = {};
 Analyser.recipesIndexing = {};
 
 Analyser.recipesIndexing.STORE = './public/store/recipes/';
-Analyser.recipesIndexing.INDEX = Analyser.recipesIndexing.STORE + '_index.json';
+Analyser.recipesIndexing.INDEX_FILE_NAME = '_index.json';
+Analyser.recipesIndexing.INDEX = Analyser.recipesIndexing.STORE + Analyser.recipesIndexing.INDEX_FILE_NAME;
 
 /**
  * Check all existing recipes and index them into a file
