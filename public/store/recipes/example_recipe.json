@@ -1,0 +1,18 @@
+{
+  "info": {
+    "name": "Example Recipe",
+    "description": "Roast chicken with sausage stuffin served with roast potatoes with olive oil, garlic  and rosemary",
+    "servings": 10,
+    "preparationTime": 45,
+    "cookingTime": 120
+  },
+  "ingredientItems": [
+    { "name": "Chicken", "amount": 1, "unit": "kg" },
+    { "name": "Potatoes", "amount": 500, "unit": "g" },
+    { "name": "Garlic Gloves", "amount": 5 }
+  ],
+  "cookingStepItems": [
+    { "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pretium tellus a enim condimentum pharetra. Quisque at aliquam quam. Phasellus ut justo ligula. Suspendisse tortor sapien, molestie eget neque id, vehicula volutpat dui. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin in egestas sapien. Quisque at placerat erat." },
+    { "description": "Integer faucibus gravida diam. Fusce volutpat velit libero, eu pretium risus consectetur id. Etiam porta leo lacinia laoreet luctus. Mauris libero lacus, pharetra sit amet commodo id, venenatis sed nunc. Phasellus vel purus elementum, ultricies sapien scelerisque, varius sem. Ut finibus odio ut urna maximus pharetra nec nec magna." }
+  ]
+}
