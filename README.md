@@ -1,12 +1,10 @@
-[![Build Status](https://travis-ci.org/foodoclock/foodoclock.github.io.svg)](https://travis-ci.org/foodoclock/foodoclock.github.io)
-
-# Food o'clock
+# Food o'clock [![Build Status](https://travis-ci.org/foodoclock/foodoclock.github.io.svg)](https://travis-ci.org/foodoclock/foodoclock.github.io)
 
 ## Setup
 
 Clone the project and install development dependencies as follow:
 ```
-bower install && npm install 
+npm install
 ```
 
 Start cooking via the local webserver:
