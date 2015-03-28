@@ -25,10 +25,11 @@ var recipeController = function recipeController($scope, $http, $state) {
   setState(recipeController.state.loading());
 
   // Load recipe
+  // TODO set header to only 'Accept: application/json'
   $http.get(RECIPE_JSON)
     .success(function(data) {
       // Set the state to successful
-      setState(recipeController.state.successful(data.recipe));
+      setState(recipeController.state.successful(data));
     })
     .error(function() {
       // Set the state to error

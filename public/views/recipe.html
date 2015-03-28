@@ -1,10 +1,10 @@
 <article ng-if="!loading && !failed">
 
-  <header class="recipe-header" ng-style="{ 'background-image': 'url(' + recipe.cover + ')' }">
+  <header class="recipe-header" ng-style="{ 'background-image': 'url(' + recipe.assetItems[0].url + ')' }">
 
     <div class="recipe-title">
-      <div><h1 class="recipe-name" ng-bind="recipe.name">Loading Recipe ...</h1></div>
-      <div><p class="recipe-description" ng-bind="recipe.description" ng-if="recipe.description"></p></div>
+      <div><h1 class="recipe-name" ng-bind="recipe.info.name">Loading Recipe ...</h1></div>
+      <div><p class="recipe-description" ng-bind="recipe.info.description" ng-if="recipe.info.description"></p></div>
     </div>
 
   </header>
@@ -13,16 +13,16 @@
 
     <ul class="recipe-info-list">
 
-      <li class="recipe-info-serve" ng-if="recipe.servings">
-        <span class="recipe-info-title">Serves</span><span class="recipe-info-value" ng-bind="recipe.servings"></span>
+      <li class="recipe-info-serve" ng-if="recipe.info.servings">
+        <span class="recipe-info-title">Serves</span><span class="recipe-info-value" ng-bind="recipe.info.servings"></span>
       </li>
 
-      <li class="recipe-info-prep-time" ng-if="recipe.prepTime">
-        <span class="recipe-info-title">Preperation time</span><span class="recipe-info-value" ng-bind="recipe.prepTime"></span>
+      <li class="recipe-info-prep-time" ng-if="recipe.info.prepTime">
+        <span class="recipe-info-title">Preperation time</span><span class="recipe-info-value" ng-bind="recipe.info.prepTime"></span>
       </li>
 
-      <li class="recipe-info-cooking-time" ng-if="recipe.cookTime">
-        <span class="recipe-info-title">Cooking time</span><span class="recipe-info-value" ng-bind="recipe.cookTime"></span>
+      <li class="recipe-info-cooking-time" ng-if="recipe.info.cookingTime">
+        <span class="recipe-info-title">Cooking time</span><span class="recipe-info-value" ng-bind="recipe.info.cookingTime"></span>
       </li>
 
     </ul>
@@ -61,11 +61,11 @@
       </span>
     </div>
 
-    <p ng-if="recipe.ingredients.length === 0">No ingredients</p>
+    <p ng-if="recipe.ingredientItems.length === 0">No ingredients</p>
 
-    <ul class="recipe-ingredients-list" ng-if="recipe.ingredients.length > 0">
+    <ul class="recipe-ingredients-list" ng-if="recipe.ingredientItems.length > 0">
 
-      <li class="recipe-ingredient" ng-repeat="ingredient in recipe.ingredients">
+      <li class="recipe-ingredient" ng-repeat="ingredient in recipe.ingredientItems">
         <strong class="recipe-ingredient-quantity">
           <span class="recipe-ingredient-amount" ng-bind="ingredient.amount"></span><span class="recipe-ingredient-unit" ng-bind="ingredient.unit"></span>
         </strong>
@@ -105,7 +105,7 @@
 
   </section>
 
-  <section class="recipe-section recipe-steps container" ng-if="recipe.steps.length > 0">
+  <section class="recipe-section recipe-steps container" ng-if="recipe.cookingStepItems.length > 0">
 
     <div class="recipe-subheader">
       <h2>Get Cooking</h2>
@@ -192,7 +192,7 @@
 
     <ol class="recipe-steps-list">
 
-      <li class="recipe-step" ng-repeat="step in recipe.steps" ng-bind="step.description"></li>
+      <li class="recipe-step" ng-repeat="step in recipe.cookingStepItems" ng-bind="step.description"></li>
 
     </ol>
 
