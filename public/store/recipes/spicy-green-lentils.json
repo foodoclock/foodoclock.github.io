@@ -1,22 +1,28 @@
 {
   "info": {
     "name": "Spciy Green Lentils",
-    "description": "Roast chicken with sausage stuffin served with roast potatoes with olive oil, garlic  and rosemary",
+    "description": "Creamy green lentils slow cooked in a spice mix.",
     "servings": 4,
-    "preparationTime": 480,
-    "cookingTime": 120
+    "preparationTime": 900,
+    "cookingTime": 600
   },
   "ingredientItems": [
-    { "name": "Chicken", "amount": 1, "unit": "kg" },
-    { "name": "Potatoes", "amount": 500, "unit": "g" },
-    { "name": "Garlic Gloves", "amount": 5 },
-    { "name": "Parmegiano Regiano", "amount": 20, "unit": "g", "optional": true }
+    { "name": "Green Lentils", "amount": 500, "unit": "g" },
+    { "name": "Water", "amount": 1, "unit": "l" },
+    { "name": "Medium Onions", "amount": 2 },
+    { "name": "Garlic Cloves", "amount": 4 },
+    { "name": "Garam Masala", "amount": 3, "unit": "tbsp" },
+    { "name": "Ground Cumin", "amount": 3, "unit": "tbsp" },
+    { "name": "Whole Dried Chillies", "amount": 2 },
+    { "name": "Olive Oil", "amount": 2, "unit": "tbsp" },
+    { "name": "Salt", "amount": 1, "unit": "tbsp" },
+    { "name": "Parmegiano Regiano", "amount": 20, "unit": "g" }
   ],
   "cookingStepItems": [
     { "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pretium tellus a enim condimentum pharetra. Quisque at aliquam quam. Phasellus ut justo ligula. Suspendisse tortor sapien, molestie eget neque id, vehicula volutpat dui. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin in egestas sapien. Quisque at placerat erat." },
     { "description": "Integer faucibus gravida diam. Fusce volutpat velit libero, eu pretium risus consectetur id. Etiam porta leo lacinia laoreet luctus. Mauris libero lacus, pharetra sit amet commodo id, venenatis sed nunc. Phasellus vel purus elementum, ultricies sapien scelerisque, varius sem. Ut finibus odio ut urna maximus pharetra nec nec magna." }
   ],
-  "assetItems": [
-    { "name": "cover", "url": "http://www.insockmonkeyslippers.com/wp-content/uploads/2012/10/roasted-sage-garlic-chicken-cv1.jpg" }
+  "assets": [
+    { "type": "cover", "url": "http://upload.wikimedia.org/wikipedia/commons/1/18/Green_Lentils.JPG" }
   ]
 }
